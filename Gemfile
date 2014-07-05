@@ -40,3 +40,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'activerecord-session_store'
 gem 'devise'
+gem 'foreigner'
