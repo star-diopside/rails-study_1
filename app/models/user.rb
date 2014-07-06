@@ -8,6 +8,5 @@ class User < ActiveRecord::Base
          :confirmable, :timeoutable, authentication_keys: [:login_name]
 
   validates :username, presence: true
-  validates :login_name, presence: true
-  validates :login_name, uniqueness: true
+  validates :login_name, presence: true, uniqueness: true
 end
