@@ -13,11 +13,15 @@
 
   <div class="field">
     <%= f.label :scheduled_on %><br>
-    <%= f.date_select :scheduled_on %>
+    <%= f.date_field :scheduled_on %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br>
+    <%= collection_select :user, :username, User.all, :id, :username, include_blank: true %>
   </div>
   <%= f.hidden_field :lock_version %>
   <div class="actions">
