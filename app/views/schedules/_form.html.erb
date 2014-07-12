@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :user %><br>
-    <%= collection_select :user, :username, User.all, :id, :username, include_blank: true %>
+    <%= collection_select :schedule, :user_ids, User.all, :id, :username, include_blank: true %>
   </div>
   <%= f.hidden_field :lock_version %>
   <div class="actions">
