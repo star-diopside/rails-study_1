@@ -6,8 +6,17 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable, :timeoutable, authentication_keys: [:login_name]
+         :timeoutable, authentication_keys: [:login_name]
 
   validates :username, presence: true
   validates :login_name, presence: true, uniqueness: true
+
+  private
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
 end
