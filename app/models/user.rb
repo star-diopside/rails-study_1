@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :schedules, through: :user_schedule_relations
+  has_many :user_schedules
+  has_many :schedules, through: :user_schedules
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

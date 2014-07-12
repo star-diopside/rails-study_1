@@ -10,5 +10,12 @@
   <%= @schedule.description %>
 </p>
 
+<p>
+  <strong>Users:</strong>
+  <% @schedule.users.each do |user| %>
+    <%= user.username %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_schedule_path(@schedule) %> |
 <%= link_to 'Back', schedules_path %>
