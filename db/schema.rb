@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140706125631) do
+ActiveRecord::Schema.define(version: 20140712110437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,16 +34,16 @@ ActiveRecord::Schema.define(version: 20140706125631) do
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
-  create_table "user_schedule_relations", force: true do |t|
+  create_table "user_schedules", force: true do |t|
     t.integer  "user_id"
     t.integer  "schedule_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "user_schedule_relations", ["schedule_id"], name: "index_user_schedule_relations_on_schedule_id", using: :btree
-  add_index "user_schedule_relations", ["user_id", "schedule_id"], name: "index_user_schedule_relations_on_user_id_and_schedule_id", unique: true, using: :btree
-  add_index "user_schedule_relations", ["user_id"], name: "index_user_schedule_relations_on_user_id", using: :btree
+  add_index "user_schedules", ["schedule_id"], name: "index_user_schedules_on_schedule_id", using: :btree
+  add_index "user_schedules", ["user_id", "schedule_id"], name: "index_user_schedules_on_user_id_and_schedule_id", unique: true, using: :btree
+  add_index "user_schedules", ["user_id"], name: "index_user_schedules_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20140706125631) do
   add_index "users", ["login_name"], name: "index_users_on_login_name", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "user_schedule_relations", "schedules", name: "user_schedule_relations_schedule_id_fk"
-  add_foreign_key "user_schedule_relations", "users", name: "user_schedule_relations_user_id_fk"
+  add_foreign_key "user_schedules", "schedules", name: "user_schedules_schedule_id_fk"
+  add_foreign_key "user_schedules", "users", name: "user_schedules_user_id_fk"
 
 end
