@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :users, only: [:index, :show]
   resources :schedules
+  resources :schedule_wizard, only: [] do
+    resources :steps, only: [:show, :update], controller: :schedule_wizard
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

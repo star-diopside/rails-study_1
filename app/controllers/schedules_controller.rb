@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :set_schedule, only: [:show, :edit, :update, :destroy]
+  before_action :set_schedule, only: [:show, :update, :destroy]
   before_action :authenticate_user!
 
   # GET /schedules
@@ -20,6 +20,7 @@ class SchedulesController < ApplicationController
 
   # GET /schedules/1/edit
   def edit
+    redirect_to schedule_wizard_step_path(:edit, schedule_wizard_id: params[:id])
   end
 
   # POST /schedules

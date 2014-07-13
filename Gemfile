@@ -41,3 +41,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'activerecord-session_store'
 gem 'devise'
 gem 'foreigner'
+gem 'wicked'
