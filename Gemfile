@@ -49,4 +49,6 @@ gem "rspec-rails", group: :test
 gem 'activerecord-session_store'
 gem 'devise'
 gem 'foreigner'
+gem 'twitter-bootswatch-rails'
+gem 'twitter-bootswatch-rails-helpers'
 gem 'wicked'
