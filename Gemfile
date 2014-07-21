@@ -41,6 +41,11 @@ gem 'spring',        group: :development
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
+gem 'pry', group: :development
+gem 'pry-doc', group: :development
+gem 'pry-rails', group: :development
+gem "rspec", group: :test
+gem "rspec-rails", group: :test
 gem 'activerecord-session_store'
 gem 'devise'
 gem 'foreigner'
