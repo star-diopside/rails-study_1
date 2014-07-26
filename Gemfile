@@ -41,14 +41,26 @@ gem 'spring',        group: :development
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
-gem 'pry', group: :development
-gem 'pry-doc', group: :development
-gem 'pry-rails', group: :development
-gem "rspec", group: :test
-gem "rspec-rails", group: :test
+group :development do
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'hirb'
+  gem 'hirb-unicode'
+end
+
+group :test do
+  gem "rspec"
+  gem "rspec-rails"
+end
+
 gem 'activerecord-session_store'
 gem 'devise'
 gem 'foreigner'
-gem 'twitter-bootswatch-rails'
-gem 'twitter-bootswatch-rails-helpers'
+gem 'less-rails'
+gem 'twitter-bootstrap3-rails'
 gem 'wicked'

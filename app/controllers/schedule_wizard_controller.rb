@@ -10,9 +10,18 @@ class ScheduleWizardController < ApplicationController
   end
 
   def update
-    @schedule = session[:schedule_wizard][params[:schedule_wizard_id]]
-    @schedule.assign_attributes(schedule_params)
-    render_step next_step
+    case step
+    when :edit
+      @schedule = session[:schedule_wizard][params[:schedule_wizard_id]]
+      @schedule.assign_attributes(schedule_params)
+      render_step next_step
+
+    when :confirm
+      @schedule = session[:schedule_wizard][params[:schedule_wizard_id]]
+      @schedule.save!
+      flash[:notice] = "更新が完了しました。"
+      redirect_to schedules_path
+    end
   end
 
   private
