@@ -26,6 +26,6 @@ class ScheduleWizardController < ApplicationController
 
   private
   def schedule_params
-    params.require(:schedule).permit(:scheduled_on, :description, :lock_version, :user_ids)
+    params.require(:schedule).permit(:scheduled_on, :description, :lock_version, {user_ids: []})
   end
 end
